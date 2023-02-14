@@ -21,7 +21,7 @@ create_table = '''CREATE TABLE da_data(
 cursor.execute(create_table)
  
 # Opening the person-records.csv file
-file = open('data\gsearch_jobs.csv')
+file = open('data\gsearch_jobs.csv', encoding="utf8")
  
 # Reading the contents of the gsearch_jobs.csv file
 contents = csv.reader(file)
