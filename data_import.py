@@ -12,10 +12,18 @@ cursor = connection.cursor()
 # Table Definition
 create_table = '''CREATE TABLE da_data(
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                title TEXT NOT NULL,
-                company_name TEXT NOT NULL,
-                location TEXT NOT NULL);
-                '''
+                title varchar(64) NOT NULL,
+                company_name varchar(64) NOT NULL,
+                location TEXT NULL,
+                via varchar(40) NOT NULL,
+                description text NOT NULL,
+                extensions text NULL,
+                schedule_type text NULL,
+                work_from_home int NULL, 
+                salary_hourly Float NULL, 
+                salary_yearly Float NULL,
+                salary_standardized Float NULL,
+                description_tokens text NULL);'''
  
 # Creating the table into our database
 cursor.execute(create_table)
@@ -27,7 +35,7 @@ file = open('data\gsearch_jobs.csv', encoding="utf8")
 contents = csv.reader(file)
  
 # SQL query to insert data into the da_data table
-insert_records = "INSERT INTO da_data (title, company_name,location) VALUES(?, ?, ?)"
+insert_records = "INSERT INTO da_data (title, company_name,location,via,description, extensions, schedule_type,work_from_home,salary_hourly,salary_yearly,salary_standardized,description_tokens) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)"
  
 # Importing the contents of the file into da_data table
 cursor.executemany(insert_records, contents)
