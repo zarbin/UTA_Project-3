@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request
 import sqlite3 as sql
+
 app = Flask(__name__)
 
-conn = sql.connect('path_to_db_goes_here')
+conn = sql.connect('da_job_data.sqlite', check_same_thread=False)
 
 @app.route('/')
 def home():
@@ -16,11 +17,9 @@ def map():
 def data():
    
    conn.row_factory = sql.Row
-   cur = conn.cursor()
-   cur.execute("sql_query_goes_here")
-   rows = cur.fetchall()
-
-   return render_template("data.html",rows = rows)
+   rows = conn.execute("SELECT * FROM da_data").fetchall()
+   
+   return render_template("data.html",rows = rows)   
 
 if __name__ == "__main__":
     app.run(debug=True)
