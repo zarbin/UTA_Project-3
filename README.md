@@ -14,25 +14,29 @@
 
 ----
 ## Team Members
-#### John Quinn
-#### Justin Bernier
-#### Kimberly Sernett 
-#### Tyler Levie
-#### Xuan Di
+- John Quinn
+- Justin Bernier
+- Kimberly Sernett 
+- Tyler Levie
+- Xuan Di
 
 ----
+## Technical Specifications 
+- **Datasource:**  Kaggle sourced .csv file
+- **Database Engine** - SQLite 
+- **Web Server:** Flask - Micro web framework
+- **Programming Language** - Python / JavaScript
+- **Geographical Map** - Leaflet
+
+----
+
 ## DA Job Posting Flow diagram
-![Getting Started](Flow_Diagram.png)
-
-----
-## Screenshots 
-
-
+![Getting Started](images/Flow_Diagram.png)
 
 ----
 ## References
-### U.S Bureau of Labor Statistics
+#### U.S Bureau of Labor Statistics
 https://www.bls.gov/ooh/math/operations-research-analysts.htm
 
-### Dataset
+#### Dataset
 https://www.kaggle.com/datasets/lukebarousse/data-analyst-job-postings-google-search
