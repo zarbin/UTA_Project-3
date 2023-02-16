@@ -1,4 +1,4 @@
-# Project 3 DA Job Posting Analysis
+# Project 3 - DA Job Posting Analysis
 ## Summary
 #### The Bureau of Labor and Statistics expects the number of hired Data Analysts to grow by [25%](doc:https://www.bls.gov/ooh/math/operations-research-analysts.htm) during the decade from 2020 to 2030. To better prepare ourselves getting into such a fast-growing filed with constant envolving, we are in urge of finding out what are the in-demand data analyst skills in the current business. 
 
