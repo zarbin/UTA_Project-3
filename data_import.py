@@ -33,6 +33,7 @@ file = open('data\gsearch_jobs.csv', encoding="utf8")
  
 # Reading the contents of the gsearch_jobs.csv file
 contents = csv.reader(file)
+header = next(contents)
  
 # SQL query to insert data into the da_data table
 insert_records = "INSERT INTO da_data (title, company_name,location,via,description, extensions, schedule_type,work_from_home,salary_hourly,salary_yearly,salary_standardized,description_tokens) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)"
