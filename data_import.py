@@ -55,3 +55,6 @@ connection.commit()
  
 # closing the database connection
 connection.close()
+
+# could generate JSON file from this data
+# CODE HERE
