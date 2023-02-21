@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlaskApp</title>
+</head>
+<body>
+    <h2>Welcome to FlaskApp!</h2>
+
+    {% block content %}
+        <h1>{% block title %} Rows {% endblock %}</h1>
+        {% for row in rows %}
+            <div class='post'>
+                <h2>{{ row['title'] }}</h2>
+            </div>
+        {% endfor %}
+    {% endblock %}
+
+</body>
+</html>
