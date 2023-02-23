@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, jsonify, g
 import sqlite3
 import json
 
+# Create Flask app
 app = Flask(__name__)
 
 # Sqlite3 DB connection
@@ -51,5 +52,14 @@ def data():
         print(type(data))
     return jsonify(data)
 
+# JSON endpoint on Flask app.route /data
+@app.route('/data_map')
+def data_map():
+    with open('data/map_db.json') as f:
+        data_map = json.load(f)
+        print(type(data_map))
+    return jsonify(data_map)
+
+# Run Flask app
 if __name__ == "__main__":
     app.run(debug=True)
