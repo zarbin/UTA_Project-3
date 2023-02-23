@@ -6,15 +6,20 @@
 </head>
 <body>
     <h2>Welcome to FlaskApp!</h2>
-
+    
+    <!--This is an example of querying the SQLite Database
     {% block content %}
         <h1>{% block title %} Rows {% endblock %}</h1>
-        {% for row in rows %}
+        {% for row in data %}
             <div class='post'>
-                <h2>{{ row['title'] }}</h2>
+                <h2>{{ row['via'] }}</h2>
             </div>
         {% endfor %}
     {% endblock %}
 
+    {{data}}-->
+
+    
+     
 </body>
 </html>
