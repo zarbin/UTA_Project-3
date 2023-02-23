@@ -48,11 +48,11 @@ d3.json(url).then((data) => {
 
     // Set up the the bar chart
     let barChart = {
-        //x: xticks,
-        labels: xticks,
-        //y: yticks,
-        values: yticks,
-        type: "pie"
+        x: xticks,
+        //labels: xticks,
+        y: yticks,
+        //values: yticks,
+        type: "bar"
         //orientation: "h"
     };
     
