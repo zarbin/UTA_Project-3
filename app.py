@@ -34,6 +34,11 @@ def home():
 def js():
     return render_template('js.html')
 
+# Home endpoint on Flask app.route /js
+@app.route('/python')
+def python():
+    return render_template('python.html')
+
 # Map endpoint on Flask app.route /map
 @app.route('/map')
 def map():
