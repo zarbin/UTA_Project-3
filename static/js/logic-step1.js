@@ -38,7 +38,7 @@ legend.onAdd = function(){
 
         // Create the legend div
     var div = L.DomUtil.create('div', 'info legend'),
-            levels = [1, 10, 30, 50, 100, 200, 500],
+            levels = [1, 10, 15, 25, 35, 50, 100],
             labels = [];
 
         // create legend title
@@ -55,20 +55,20 @@ legend.onAdd = function(){
 legend.addTo(myMap);
     
 
-function getColor(depth){
+function getColor(jCount){
     
     // Deeper depths have darker colors
-    if (depth > 500){
+    if (jCount > 100){
         return '#b10026'
-    } else if (depth > 200){
+    } else if (jCount > 50){
         return '#e31a1c';
-    } else if (depth > 100){
+    } else if (jCount > 35){
         return '#fc4e2a'
-    } else if(depth > 50) {
+    } else if(jCount > 25) {
         return '#fd8d3c'
-    } else if (depth > 30) {
+    } else if (jCount > 15) {
         return '#feb24c'
-    } else if (depth > 10) {
+    } else if (jCount > 10) {
         return '#fed976'
     } else {
         return '#ffffb2'
@@ -78,18 +78,32 @@ function getColor(depth){
 d3.json(url).then(function(response, ) {
     console.log(response);
     
-    function ptToLayer(latlng) {
+    function ptToLayer(feature, latlng) {
         return L.circleMarker(latlng, {
-            color: 'green',
-            weight: 1,
-            //fillColor: getColor(response.latitude, response.longitude),
-            fillOpacity: 0.6,
-            //radius: feature.properties.mag ** 1.5,
+            color: 'olive',
+            weight: 1.5,
+            fillColor: getColor(feature.properties.count),
+            fillOpacity: 0.7,
+            radius: feature.properties.count ** .7,
         });
     };
 
-    var gJsonLayer = L.geoJson(response, {
-        //onEachFeature: onEach,
+    function onEach(feature, layer) {
+        layer.bindPopup(`<h2>${feature.properties.location}</h2><h3>
+            
+            Amount of jobs in city: ${feature.properties.count} Data Analyst</h3><hr>`);
+
+        // mousehover action
+        layer.on('mouseover', function(d){
+            this.openPopup();
+        });
+        layer.on('mouseout', function(e){
+            this.closePopup();
+        });
+    };
+
+    var gJsonLayer = L.geoJson(response.features, {
+        onEachFeature: onEach,
         pointToLayer: ptToLayer
     });
 
