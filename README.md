@@ -31,7 +31,7 @@
 ----
 
 ## DA Job Posting Flow diagram
-![Getting Started](images/Flow_Diagram.png)
+![Getting Started](static/images/Flow_Diagram.png)
 
 ----
 ## References

@@ -29,6 +29,11 @@ def close_db(error):
 def home():
     return render_template('home.html')
 
+# Home endpoint on Flask app.route /js
+@app.route('/js')
+def js():
+    return render_template('js.html')
+
 # Map endpoint on Flask app.route /map
 @app.route('/map')
 def map():
