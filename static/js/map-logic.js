@@ -1,13 +1,8 @@
 
-
 // Creating the map object
 var url = '/data_map'
 
-//var geojson; 
-
-//Get the data with d3.
-
-    // Adding the tile layer
+// Adding tile layers
 var base = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 });
@@ -36,12 +31,12 @@ var legend = L.control({position: 'bottomright'});
 
 legend.onAdd = function(){
 
-        // Create the legend div
+    // Create the legend div
     var div = L.DomUtil.create('div', 'info legend'),
-            levels = [1, 10, 15, 25, 35, 50, 100],
-            labels = [];
+            levels = [1, 10, 15, 25, 35, 50, 100];
+            //labels = [];
 
-        // create legend title
+    // create legend title
     div.innerHTML += '<center><h2>Job<br>Postings</h2><hr></center>'
 
     for (var i = 0; i < levels.length; i++) {
@@ -57,7 +52,7 @@ legend.addTo(myMap);
 
 function getColor(jCount){
     
-    // Deeper depths have darker colors
+    // More jobs in a city gets a darker color
     if (jCount > 100){
         return '#b10026'
     } else if (jCount > 50){
@@ -75,8 +70,11 @@ function getColor(jCount){
     };
 };
 
+//grabbing data from endpoint and then manipulating into a heat map layer
 d3.json(url).then(function(response, ) {
-    console.log(response);
+    
+    //console line for testing purposes
+    //console.log(response);
     
     function ptToLayer(feature, latlng) {
         return L.circleMarker(latlng, {
@@ -88,12 +86,13 @@ d3.json(url).then(function(response, ) {
         });
     };
 
+    //information popups
     function onEach(feature, layer) {
         layer.bindPopup(`<h2>${feature.properties.location}</h2><h3>
             
             Amount of jobs in city: ${feature.properties.count} Data Analyst</h3><hr>`);
 
-        // mousehover action
+        // mousehover 
         layer.on('mouseover', function(d){
             this.openPopup();
         });
@@ -112,4 +111,3 @@ d3.json(url).then(function(response, ) {
 }); 
 
 
-//testing purposes
