@@ -65,7 +65,7 @@ def data():
 # JSON endpoint on Flask app.route /data
 @app.route('/data_map')
 def data_map():
-    with open('data/map_db.json') as f:
+    with open('data/map.geojson') as f:
         data_map = json.load(f)
         print(type(data_map))
     return jsonify(data_map)

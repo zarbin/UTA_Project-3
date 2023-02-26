@@ -1,13 +1,8 @@
 
-
 // Creating the map object
 var url = '/data_map'
 
-//var geojson; 
-
-//Get the data with d3.
-
-    // Adding the tile layer
+// Adding tile layers
 var base = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 });
@@ -36,12 +31,12 @@ var legend = L.control({position: 'bottomright'});
 
 legend.onAdd = function(){
 
-        // Create the legend div
+    // Create the legend div
     var div = L.DomUtil.create('div', 'info legend'),
-            levels = [1, 10, 30, 50, 100, 200, 500],
-            labels = [];
+            levels = [1, 10, 15, 25, 35, 50, 100];
+            //labels = [];
 
-        // create legend title
+    // create legend title
     div.innerHTML += '<center><h2>Job<br>Postings</h2><hr></center>'
 
     for (var i = 0; i < levels.length; i++) {
@@ -55,41 +50,59 @@ legend.onAdd = function(){
 legend.addTo(myMap);
     
 
-function getColor(depth){
+function getColor(jCount){
     
-    // Deeper depths have darker colors
-    if (depth > 500){
+    // More jobs in a city gets a darker color
+    if (jCount > 100){
         return '#b10026'
-    } else if (depth > 200){
+    } else if (jCount > 50){
         return '#e31a1c';
-    } else if (depth > 100){
+    } else if (jCount > 35){
         return '#fc4e2a'
-    } else if(depth > 50) {
+    } else if(jCount > 25) {
         return '#fd8d3c'
-    } else if (depth > 30) {
+    } else if (jCount > 15) {
         return '#feb24c'
-    } else if (depth > 10) {
+    } else if (jCount > 10) {
         return '#fed976'
     } else {
         return '#ffffb2'
     };
 };
 
+//grabbing data from endpoint and then manipulating into a heat map layer
 d3.json(url).then(function(response, ) {
-    console.log(response);
     
-    function ptToLayer(latlng) {
+    //console line for testing purposes
+    //console.log(response);
+    
+    function ptToLayer(feature, latlng) {
         return L.circleMarker(latlng, {
-            color: 'green',
-            weight: 1,
-            //fillColor: getColor(response.latitude, response.longitude),
-            fillOpacity: 0.6,
-            //radius: feature.properties.mag ** 1.5,
+            color: 'olive',
+            weight: 1.5,
+            fillColor: getColor(feature.properties.count),
+            fillOpacity: 0.7,
+            radius: feature.properties.count ** .7,
         });
     };
 
-    var gJsonLayer = L.geoJson(response, {
-        //onEachFeature: onEach,
+    //information popups
+    function onEach(feature, layer) {
+        layer.bindPopup(`<h2>${feature.properties.location}</h2><h3>
+            
+            Amount of jobs in city: ${feature.properties.count} Data Analyst</h3><hr>`);
+
+        // mousehover 
+        layer.on('mouseover', function(d){
+            this.openPopup();
+        });
+        layer.on('mouseout', function(e){
+            this.closePopup();
+        });
+    };
+
+    var gJsonLayer = L.geoJson(response.features, {
+        onEachFeature: onEach,
         pointToLayer: ptToLayer
     });
 
