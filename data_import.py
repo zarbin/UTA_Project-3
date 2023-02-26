@@ -52,9 +52,10 @@ for r in rows:
  
 # Committing the changes
 connection.commit()
+
+# export data to json for app.py route /data to use for d3.js.
+rows.to_json('../data/data.json', orient='records')
  
 # closing the database connection
 connection.close()
 
-# could generate JSON file from this data
-# CODE HERE
