@@ -18,13 +18,26 @@
             <a type="button" class="btn btn-secondary btn-lg" href="/map">Switch to Map View</a>
         </div>
 
+        <h2>Big Header here</h2>
+        <p>Numbers on hover reflect the rounded USD (in millions) spent in each category in 2017.</p>
+ 
+
         <!--Viz Row-->
         <div class="row" id="viz-row">
 
            <!--Visual 1 Bar Chart-->
             <div class="col-md-2" id="viz-1">
-                <!--<canvas id="bar"></canvas>-->
-                <div id="bar"></div>
+                <select id="selDataset">
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="KS">Kansas</option>
+                    <option value="MO">Missouri</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="TX">Texas</option>
+                    <option value="United States">Remote</option>
+                </select>
+                
+                <div id="pie"></div>
             </div>
 
     </div>
