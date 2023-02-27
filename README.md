@@ -27,9 +27,16 @@ Our web application has a landing page and links to three distinct areas to high
 
 ### Screenshots of application with summary *HERE* 
 
-![Application Screenshot](static/images/*HERE*.png)
+## Landing Page
 ![Application Screenshot](static/images/*HERE*.png)
 
+## Map Page
+![Application Screenshot](static/images/*HERE*.png)
+## Interactive JavaScript Page
+![Application Screenshot](static/images/piechart.gif)
+
+## Python Analysis Page
+![Application Screenshot](static/images/*HERE*.png)
 ----
 
 ## Project Proposal
