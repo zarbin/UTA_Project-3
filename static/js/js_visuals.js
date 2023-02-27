@@ -37,10 +37,10 @@ d3.json(url).then((data) => {
         //drop 'via ' from the string
         name = name.substring(4);
         
-        //if state is not in the object, add it and the listing source
-        //if state does exist in the object check if compnay is in the object
-        //if company is not in the object, add it and set count to 1
-        //if company is in the object, increment the count
+        //if state is not in the object, add it and the job listing source
+        //if state does exist in the object check if listing source name is in the object
+        //if listing source name is not in the object, add it and set count to 1
+        //if listing source name is in the object, increment the count
         if (!(state in state_data)) {
             state_data[state] = {};
             state_data[state][name] = 1;
@@ -53,13 +53,13 @@ d3.json(url).then((data) => {
         }
     }
 
+    //view state_data object in console
     console.log(state_data);
 
-    //sort in descending order by count
-    //let sorted = lookup.sort((a, b) => a[1] - b[1]);
-    function sortObjEntires(obj){
+    //sort in descending order by count.  not in use.
+    /*function sortObjEntires(obj){
         return Object.entries(obj).sort((a,b) => b[1]-a[1])
-    }
+    }*/
      
     // Sort the company_name values for each state
     for (const state in state_data) {
@@ -76,8 +76,8 @@ d3.json(url).then((data) => {
     //console.log(arCompanies);
 
 
-    //loop through and get count for job sources
-    //this could be a function to create the xticks and yticks
+    //loop through and populate xticks and yticks
+    //this could be standalone function
     //currently repeating code when the dropdown is changed
     for (var x = 0; (x < 10 && x < arCompanies.length);  x++) {
         // Set top ten items to display in descending order
@@ -86,12 +86,14 @@ d3.json(url).then((data) => {
         console.log(arCompanies[x]);
     }
 
+    //after data processing intialize the dashboard
     init();
 })
 
 // function to build the plot: pie chart
 function pie_graph(){
 
+    // create the pie chart
     let chart = {
         values: yticks,
         labels: xticks,
@@ -101,6 +103,7 @@ function pie_graph(){
         automargin: true
     };
 
+    //layout for the pie chart
     let layout = {
         title: "Job Posting Count by Source",
         hovermode: "closest",
@@ -110,6 +113,7 @@ function pie_graph(){
         height: '900'
     };
 
+    //create new pie chart using plotly
     Plotly.newPlot("pie", [chart], layout);
 }
 
@@ -162,8 +166,6 @@ function getData() {
         // Set top ten items to display in descending order
         xticks.push(data[x][0]);
         yticks.push(data[x][1]);
-        console.log('data[x]');
-        console.log(data[x]);
     }
     
     /* debugging
