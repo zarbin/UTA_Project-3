@@ -13,7 +13,7 @@ Our web application has a landing page and links to three distinct areas to high
 
 ### Top-Level Directory Layout
 
-    ├── data                    # datasource .csv file from Kaggle is stored here.  JSON files stored here for endpoints.
+    ├── data                    # datasource .csv from Kaggle and JSON files stored here for endpoints.
     ├── notebooks               # production notebook and files with code promoted from sandbox after testing.
     ├── sandbox                 # sandbox environment for EDA, testing, data wrangling.
     ├── static                  # static files for our application.
