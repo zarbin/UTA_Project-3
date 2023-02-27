@@ -24,19 +24,19 @@ Our web application has a landing page and links to three distinct areas to high
     ├── LICENSE
     └── README.md
 
-
-### Screenshots of application with summary *HERE* 
+### Application Website Overview
 
 ## Landing Page
-![Application Screenshot](static/images/*HERE*.png)
-
+![Application Screenshot](static/images/home_page.png)
 ## Map Page
-![Application Screenshot](static/images/*HERE*.png)
+![Application Screenshot](static/images/map.png)
+
 ## Interactive JavaScript Page
 ![Application Screenshot](static/images/piechart.gif)
 
 ## Python Analysis Page
-![Application Screenshot](static/images/*HERE*.png)
+![Application Screenshot](static/images/python_page.png)
+
 ----
 
 ## Project Proposal
