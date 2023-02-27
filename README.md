@@ -39,16 +39,16 @@ We successfully sourced data from kaggle, imported it into a SQLITE database and
 
 ### top-level directory layout
 
-├── data                    # datasource .csv file from kaggle is stored where with a backup
-├── notebooks               # production notebooks files with code promoted from sandbox after testing
-├── sandbox                 # sandbox environment for EDA, testing, data wrangling.
-├── static                  # static files for our application
-│   ├── css                 # css stylesheets code
-│   ├── images              # image files
-│   ├── js                  # javascript code
-├── templates               # html files for use in application
-├── LICENSE
-└── README.md
+    ├── data                    # datasource .csv file from kaggle is stored where with a backup
+    ├── notebooks               # production notebooks files with code promoted from sandbox after testing
+    ├── sandbox                 # sandbox environment for EDA, testing, data wrangling
+    ├── static                  # static files for our application
+    │   ├── css                 # css stylesheets code
+    │   ├── images              # image files
+    │   ├── js                  # javascript code
+    ├── templates               # html files for use in application
+    ├── LICENSE
+    └── README.md
 
 ### Screenshots of application with summary *HERE* 
 
