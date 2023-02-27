@@ -69,8 +69,14 @@ Our web application has a landing page and links to three distinct areas to high
 ----
 
 ## References
-### U.S Bureau of Labor Statistics
-https://www.bls.gov/ooh/math/operations-research-analysts.htm
+
+- **U.S Bureau of Labor Statistics** - https://www.bls.gov/ooh/math/operations-research-analysts.htm <br />
+- **Forbes** - https://www.forbes.com/sites/bernhardschroeder/2021/06/11/the-data-analytics-profession-and-employment-is-exploding-three-trends-that-matter/?sh=489094073f81<br />
 
 ### Dataset
-https://www.kaggle.com/datasets/lukebarousse/data-analyst-job-postings-google-search
+- **Kaggle** - https://www.kaggle.com/datasets/lukebarousse/data-analyst-job-postings-google-search<br />
+
+### Resources
+- **ChatGPT** - https://chat.openai.com/chat<br />
+- **Bootstrap** - https://getbootstrap.com/
+
