@@ -37,7 +37,7 @@ d3.json(url).then((data) => {
         //drop 'via ' from the string
         name = name.substring(4);
         
-        //if state is not in the object, add it and the job listing source
+        //if state is not in the object, add it and the job listing source set value to 1
         //if state does exist in the object check if listing source name is in the object
         //if listing source name is not in the object, add it and set count to 1
         //if listing source name is in the object, increment the count
@@ -56,21 +56,24 @@ d3.json(url).then((data) => {
     //view state_data object in console
     console.log(state_data);
 
-    //sort in descending order by count.  not in use.
+    //sort function.  not in use.
     /*function sortObjEntires(obj){
         return Object.entries(obj).sort((a,b) => b[1]-a[1])
     }*/
      
-    // Sort the company_name values for each state
+    // Sort the company_name values for each state within state_data
     for (const state in state_data) {
-        const company_values = Object.values(state_data[state]);
-        company_values.sort((a, b) => b - a);
-        Object.keys(state_data[state]).forEach((key, index) => {
-        state_data[state][key] = company_values[index];
-        });
+        const company_values = Object.entries(state_data[state]);
+        company_values.sort((a, b) => b[1] - a[1]);
+        //console.log(state);
+        //console.log(company_values);
+        state_data[state] = company_values;  // this doesn't seem to maintain previous object structure, but works.
     }
     
-    //Default data loaded for pie chart
+    //view state_data object in console post sort
+    console.log(state_data);
+
+     //Default data loaded for pie chart
     const arCompanies = Object.entries(state_data.AR);
     //console.log('arCompanies');
     //console.log(arCompanies);
@@ -81,12 +84,18 @@ d3.json(url).then((data) => {
     //currently repeating code when the dropdown is changed
     for (var x = 0; (x < 10 && x < arCompanies.length);  x++) {
         // Set top ten items to display in descending order
-        xticks.push(arCompanies[x][0]);
-        yticks.push(arCompanies[x][1]);
-        console.log(arCompanies[x]);
+        xticks.push(arCompanies[x][1][0]);
+        yticks.push(arCompanies[x][1][1]);
+        //console.log(arCompanies[x][1]);
     }
 
-    //after data processing intialize the dashboard
+    /* for debugging
+    console.log('xticks');
+    console.log(xticks);
+    console.log('yticks');
+    console.log(yticks);*/
+
+    //after data processing intialize the chart
     init();
 })
 
@@ -98,9 +107,9 @@ function pie_graph(){
         values: yticks,
         labels: xticks,
         type: "pie",
-        textinfo: "label+percent",
+        textinfo: "label+value+percent",
         textposition: "outside",
-        automargin: true
+        automargin: false
     };
 
     //layout for the pie chart
@@ -164,8 +173,8 @@ function getData() {
     // Call function to update the chart
     for (var x = 0; (x < 10 && x < data.length);  x++) {
         // Set top ten items to display in descending order
-        xticks.push(data[x][0]);
-        yticks.push(data[x][1]);
+        xticks.push(data[x][1][0]);
+        yticks.push(data[x][1][1]);
     }
     
     /* debugging
