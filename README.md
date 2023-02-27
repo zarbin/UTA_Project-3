@@ -25,16 +25,26 @@ Our web application has a landing page and links to three distinct areas to high
     └── README.md
 
 ### Application Website Overview
+Below is an overview of our application website.
 
-## Landing Page
+## Home Page
+The home page is the port of our app and provides a link to Github for our repo and access to data analysis through three distinct cards.<br />
+<br />
 ![Application Screenshot](static/images/home_page.png)
+
 ## Map Page
+The Leaflet map highlights the location of job postings where the city and state are provided.  The markers show how many job postings are represented in that area.<br /> 
+<br />
 ![Application Screenshot](static/images/map.png)
 
 ## Interactive JavaScript Page
+The interactive JavaScript Plotly graph highlights the job listing source by state.  The drop-down contains the states represented in our datasource and the user can simply select one to see which sources were used to pull job listings.  <br />
+<br />
 ![Application Screenshot](static/images/piechart.gif)
 
 ## Python Analysis Page
+Our Python data analysis includes charts, graphs, wordlouds, and even natural language processing from job descriptions.  <br /> 
+<br />
 ![Application Screenshot](static/images/python_page.png)
 
 ----
