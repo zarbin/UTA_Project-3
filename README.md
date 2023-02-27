@@ -21,14 +21,14 @@
 
 ### Top-Level Directory Layout
 
-    ├── data                    # datasource .csv file from kaggle is stored where with a backup
-    ├── notebooks               # production notebooks files with code promoted from sandbox after testing
-    ├── sandbox                 # sandbox environment for EDA, testing, data wrangling
-    ├── static                  # static files for our application
-    │   ├── css                 # css stylesheets code
-    │   ├── images              # image files
-    │   ├── js                  # javascript code
-    ├── templates               # html files for use in application
+    ├── data                    # datasource .csv file from Kaggle is stored here.  JSON files stored here for endpoints.
+    ├── notebooks               # production notebook and files with code promoted from sandbox after testing.
+    ├── sandbox                 # sandbox environment for EDA, testing, data wrangling.
+    ├── static                  # static files for our application.
+    │   ├── css                 # CSS stylesheet code.
+    │   ├── images              # image files.
+    │   ├── js                  # javascript code.
+    ├── templates               # html files for use in application.
     ├── LICENSE
     └── README.md
 
