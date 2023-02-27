@@ -1,49 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>FlaskApp</title>
+    <style>
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 3px;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container-fluid">
 
         <!--Header Row-->
         <div class="jumbotron" id="spacer">
-            <h1 class="display-4">Data Analyst Job Analysis</h1>
-            <span class="lead"><a id="github-link" href="https://github.com/zarbin/UTA_Project-3" target="_blank">Check out our code on GitHub</a></span>
+            <h1 class="display-4">Data Analyst Job Posting Analysis</h1>
         </div>
-            
+
         <!--Button row-->
         <div class="row justify-content-md-center">
-            <a type="button" class="btn btn-secondary btn-lg" href="/map">Switch to Map View</a>
+            <a type="button" class="btn btn-secondary btn-lg" href="/">Home</a></br>
+            </p>
         </div>
 
         <!--Viz Row-->
         <div class="row" id="viz-row">
-            <h1 class="display-4">### PYTHON VISUALS HERE ###</h1>
-                <img src="../static/images/hard_skill_bar.png" alt="Hard Skill Bar Graph">
-                <img src="../static/images/hard_skill_wordcloud.png" alt="Hard Skill WordCloud">
-                <img src="../static/images/soft_skill_bar.png" alt="Soft Skill Bar Graph">
-                <img src="../static/images/soft_skill_wordcloud.png" alt="Soft Skill WordCloud">
-
-                <img src="../static/images/salary_standardized.png" alt="Soft Skill WordCloud">
-                <img src="../static/images/salary_per_title.png" alt="Soft Skill WordCloud">
-                <img src="../static/images/wfh_office.png" alt="Soft Skill WordCloud">
-                <img src="../static/images/postings_per_title.png" alt="Soft Skill WordCloud">
+            <h2 class="display-4">Job Posting Analysis</h2>
+            <br />
+            <p><img src="../static/images/wfh_office.png" alt="Remote vs In Office Job Postings Pie Graph"
+                    class='center'>
+            </p>
+            <br />
+            <p><img src="../static/images/postings_per_title.png" alt="Number of Postings Per Job Title Bar Graph"
+                    class='center'></p>
+            <br />
+            <p><img src="../static/images/salary_standardized.png" alt="Salary Standardized to Yearly Pay Bar Graph"
+                    class='center'></p>
+            <br />
+            <p><img src="../static/images/salary_per_title.png" alt="Average Salary Per Job Title Bar Graph"
+                    class='center'></p>
+        </div>
+        <br />
+        <hr>
+        <br />
+        <div class="row" id="viz-row">
+            <h2 class="display-4">Skill Analysis</h2>
+            <br />
+            <p>
+            <div class='grid'>
+                <div><img src="../static/images/hard_skill_wordcloud.png" alt="Hard Skill WordCloud" width='600'></div>
+                <div><img src="../static/images/hard_skill_bar.png" alt="Hard Skill Bar Graph" width='600'></div>
+            </div>
+            </p>
+            <br />
+            <p>
+            <div class='grid'>
+                <div><img src="../static/images/soft_skill_wordcloud.png" alt="Soft Skill WordCloud" width='600'></div>
+                <div><img src="../static/images/soft_skill_bar.png" alt="Soft Skill Bar Graph" width='600'></div>
+            </div>
+            </p>
         </div>
     </div>
 
-    
+
 
     <!--d3.js -->
     <script src="https://d3js.org/d3.v5.min.js"></script>
-    
+
     <!--plotly.js -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
     <!-- Bar Chart JavaScript -->
     <script type="text/javascript" src="../static/js/js_visuals.js"></script>
 
-    
+
 </body>
+
 </html>
