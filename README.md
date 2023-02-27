@@ -1,20 +1,20 @@
 # Project 3 - DA Job Posting Analysis
 
 ## Project Outcome
-### Through our research, we found a [dataset](doc:https://www.kaggle.com/datasets/lukebarousse/data-analyst-job-postings-google-search) from kaggle with over 10,000 job positings so far as well as daily updates from Google's job search results for Data Analyst positions in the United States. We successfully sourced data from kaggle, imported it into a `SQLITE` database and leveraged `python` and `javascript` to createa an web application.  
+Through our research, we found a [dataset](doc:https://www.kaggle.com/datasets/lukebarousse/data-analyst-job-postings-google-search) from kaggle with over 10,000 job positings so far as well as daily updates from Google's job search results for Data Analyst positions in the United States. We successfully sourced data from kaggle, imported it into a `SQLITE` database and leveraged `python` and `javascript` to createa an web application.  
 
-### Our web application has a landing page and links to three distinct areas to highight: 
-- ### a `Leaflet` map of the United States showcases the tendency of data analyst job in demand across the country.
-- ### interactive `javascript` viualization 
-- ### `python` data analysis including 
-   - ### job posting detail; 
-   - ### job titles with average salary rate; 
-   - ### `natural language processing` results on popular soft and hard skills in demand;
+Our web application has a landing page and links to three distinct areas to highight: 
+- a `Leaflet` map of the United States showcases the tendency of data analyst job in demand across the country.
+- interactive `javascript` viualization 
+- `python` data analysis including 
+   - job posting detail; 
+   - job titles with average salary rate; 
+   -  `natural language processing` results on popular soft and hard skills in demand;
 
 ### Top-Level Directory Layout
 
     ├── data                    # datasource .csv file from kaggle is stored where with a backup
-    ├── notebooks               # production notebooks files with code promoted from sandbox after testing
+    ├── notebooks               # production notebooks and python files with code promoted from sandbox after testing
     ├── sandbox                 # sandbox environment for EDA, testing, data wrangling
     ├── static                  # static files for our application
     │   ├── css                 # css stylesheets code
