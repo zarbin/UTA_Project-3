@@ -3,7 +3,7 @@ import csv
 import sqlite3
  
 # Connecting to the data_analysis database
-connection = sqlite3.connect('da_job_data.sqlite')
+connection = sqlite3.connect('../da_job_data.sqlite')
  
 # Creating a cursor object to execute
 # SQL queries on a database table
@@ -29,7 +29,7 @@ create_table = '''CREATE TABLE da_data(
 cursor.execute(create_table)
  
 # Opening the person-records.csv file
-file = open('data\gsearch_jobs.csv', encoding="utf8")
+file = open('..\data\gsearch_jobs.csv', encoding="utf8")
  
 # Reading the contents of the gsearch_jobs.csv file
 contents = csv.reader(file)
