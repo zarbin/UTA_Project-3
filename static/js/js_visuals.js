@@ -118,8 +118,8 @@ function pie_graph(){
         hovermode: "closest",
         xaxis: {title: "Job Sourced Via"},
         yaxis: {title: "Count of Jobs"},
-        width: '1600',
-        height: '900'
+        width: '1240',
+        height: '720'
     };
 
     //create new pie chart using plotly
